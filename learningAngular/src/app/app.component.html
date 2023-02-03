@@ -1,0 +1,71 @@
+<div class="container">
+    <h1 class="text-center mb-5">Forms In Angular Js</h1>
+    <!-- {{userForm.form.invalid}} -->
+
+    <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
+
+    <form #userForm = "ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate> 
+        <!-- {{userForm.value | json}} -->
+        <!-- <div ngModelGroup = "address">
+            <div class="mb-3">
+                <label for="District" class="form-label">District</label>
+                <input type="text" class="form-control" id="District" name="District" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="City" class="form-label">City</label>
+                <input type="text" class="form-control" id="City" name="City" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="Village" class="form-label">Village</label>
+                <input type="text" class="form-control" id="Village" name="Village" ngModel>
+            </div>
+        </div> -->
+
+        <hr/>
+        <!-- {{userModel | json}} -->
+        <hr/>
+        <div class="mb-3 mt-5">
+            <label for="name" class="form-label">UserName</label>
+            <input type="text" class="form-control" [class.is-invalid]="name.invalid && name.touched" required  #name="ngModel" id="name" name="userName" [(ngModel)]="userModel.name">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">UserName is Required</small>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" [class.is-invalid]="email.invalid && email.touched" #email="ngModel" required id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="userModel.email" name = "email">
+            <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is Required</small>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" required [class.is-invalid]="phone.invalid && phone.touched" #phone="ngModel" id="phone" name=" 'phone" [(ngModel)]="userModel.phone">
+            <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone is Required</small>
+        </div>
+        <label>Selct Lables</label><br><br>
+        <div class="mb-3">
+            <select class="form-select" (blur)="validateTopics(subject.value)" (change)="validateTopics(subject.value)" aria-label="Default select example" #subject="ngModel" [class.is-invalid]="topicError && subject.touched" name="topics" [(ngModel)]="userModel.topics">
+                <option value="default">Select Your Subject</option>
+                <option *ngFor="let item of topics" value={{item}}>{{item}}</option>
+            </select>
+            <small class="text-danger" [class.d-none]="!topicError || subject.untouched">Please Select a Subject</small>
+        </div>
+        <label>Time Preferene</label><br><br>
+        <div class="form-check mb-3">
+            <input class="form-check-input" [(ngModel)]="userModel.Slots" type="radio" name="Slots" id="flexRadioDefault" value="Morning">
+            <label class="form-check-label" for="flexRadioDefault">
+                Morning (9 AM to 12 PM)
+            </label>
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" [(ngModel)]="userModel.Slots" type="radio" name="Slots" id="flexRadioDefault1" value="Evening">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Evening (5 PM to 8 PM)
+            </label>
+        </div>
+        <div class="form-check mb-3"> 
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="subscribe" [(ngModel)]="userModel.subscribe">
+            <label class="form-check-label" for="flexCheckDefault">
+                Send Me the Latest UpDates..
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="topicError || userForm.invalid">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+    {{studentsData | json}}
+    <form>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="title">Subjects <i class="bi bi-arrow-down"></i></th>
+                    <th scope="col" class="Sname">Student 1</th>
+                    <th scope="col" class="Sname">Student 2</th>
+                    <th scope="col" class="Sname">Student 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="Subjects">Hindi</th>
+                    <td> <input type="text" name="hindi" class="tddata" [value]="studentsData.student1.hindi"> </td>
+                    <td> <input type="text" name="english" class="tddata" [value]="studentsData.student2.english"> </td>
+                    <td> <input type="text" name="maths" class="tddata" [value]="studentsData.student3.maths"> </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="Subjects">English</th>
+                    <td> <input type="text" name="hindi" class="tddata" [value]="studentsData.student1.hindi"> </td>
+                    <td> <input type="text" name="english" class="tddata" [value]="studentsData.student2.english"> </td>
+                    <td> <input type="text" name="maths" class="tddata" [value]="studentsData.student3.maths"> </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="Subjects">Maths</th>
+                    <td> <input type="text" name="hindi" class="tddata" [value]="studentsData.student1.hindi"> </td>
+                    <td> <input type="text" name="english" class="tddata" [value]="studentsData.student2.english"> </td>
+                    <td> <input type="text" name="maths" class="tddata" [value]="studentsData.student3.maths"> </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="title">Total <i class="bi bi-arrow-right-short"></i></th>
+                    <td> <input type="text" name="" class="tddata"> </td>
+                    <td> <input type="text" name="" class="tddata"> </td>
+                    <td> <input type="text" name="" class="tddata"> </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

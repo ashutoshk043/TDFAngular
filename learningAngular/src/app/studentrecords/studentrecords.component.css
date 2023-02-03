@@ -1,0 +1,25 @@
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+*{
+    text-align: center;
+}
+.Subjects{
+    background-color:rgb(136, 133, 133)!important;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.Sname{
+    background-color:rgb(136, 133, 133)!important;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.title{
+    background-color: rgb(172, 90, 90)!important;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+td input{
+    width: 100%;
+    height: 30px;
+}
